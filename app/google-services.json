@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "333255917155",
+    "firebase_url": "https://craftmall.firebaseio.com",
+    "project_id": "craftmall",
+    "storage_bucket": "craftmall.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:333255917155:android:e4e4f5e42d87b565",
+        "android_client_info": {
+          "package_name": "e.pramu.craftmall"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "333255917155-u0b06asmoje6tkn43hpcp45bgag133qr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "e.pramu.craftmall",
+            "certificate_hash": "9236a9cda5d1eddf1847ddf2cbb85cc7d37f5653"
+          }
+        },
+        {
+          "client_id": "333255917155-if89mhf8s36majp2vu9kfd549invvigj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9vvNWg57Bdlrnr096Xr9FeTbt16qBAvw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "333255917155-if89mhf8s36majp2vu9kfd549invvigj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

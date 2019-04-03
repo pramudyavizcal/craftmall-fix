@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_home"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#2ecc71"
+        android:theme="@style/AppTheme.AppBarOverlay"/>
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/textView"
+        android:id="@+id/maps"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_home"
+        android:text=""
+        android:textSize="15dp"
+        android:textAlignment="center"
+        />
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/maps"
+        android:layout_above="@id/imageButton2"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            >
+
+            <ImageButton
+        android:layout_width="130dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ex"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/barang1"
+        />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <ImageButton
+        android:layout_width="130dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ex"
+        android:layout_marginTop="-150dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginLeft="200dp"
+        android:id="@+id/barang2"
+        />
+
+    <ImageButton
+        android:layout_width="130dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ex"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/barang3"
+        />
+
+    <ImageButton
+        android:layout_width="130dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ex"
+        android:layout_marginTop="-150dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginLeft="200dp"
+        android:id="@+id/barang4"
+        />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="124dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:backgroundTint="#2ecc71"
+        android:scaleType="fitCenter"
+        android:src="@drawable/home" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="124dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="128dp"
+        android:layout_marginStart="128dp"
+        android:backgroundTint="#2ecc71"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/cart" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="124dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:backgroundTint="#2ecc71"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/profile" />
+
+
+
+</RelativeLayout>

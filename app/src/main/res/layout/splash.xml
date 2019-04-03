@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#FFFFFF"
+    android:background="@drawable/splash"
+    >
+
+    <TextView
+        android:textColor="#1abc9c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textSize="49dp"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAllCaps="true"
+        android:textStyle="italic|bold"
+        android:width="@android:dimen/thumbnail_width"
+        android:id="@+id/namaappsplash"
+        android:text="CRAFTMALL"
+        />
+
+    <ImageView
+        android:layout_width="170dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ex"
+        android:layout_below="@id/namaappsplash"
+        android:id="@+id/logosplash"
+        />
+
+
+    <ImageView
+        android:id="@+id/cobagif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logosplash"
+        android:src="@drawable/splashcoba" />
+
+    <TextView
+        android:textColor="#1abc9c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="535dp"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAllCaps="true"
+        android:width="@android:dimen/thumbnail_width"
+        tools:textStyle="bold"
+        android:id="@+id/loadingsplash"
+        android:text="LOADING"
+        />
+</RelativeLayout>

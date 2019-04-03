@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_cart"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#2ecc71"
+        android:theme="@style/AppTheme.AppBarOverlay"/>
+
+    <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="392dp"
+        android:layout_above="@id/textVTotal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/toolbar_home"
+        android:layout_marginBottom="119dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="124dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:backgroundTint="#2ecc71"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/home" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="124dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="128dp"
+        android:layout_marginStart="128dp"
+        android:backgroundTint="#2ecc71"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/cart" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="124dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:backgroundTint="#2ecc71"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/profile" />
+
+    <TextView
+        android:id="@+id/textVTotal"
+        android:layout_width="224dp"
+        android:layout_height="36dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="74dp"
+        android:layout_marginStart="21dp"
+        android:text="TextView"
+        android:textSize="22sp"
+        tools:text="Total"
+        android:layout_marginLeft="21dp"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:id="@+id/buttonCheck"
+        android:layout_width="107dp"
+        android:layout_height="46dp"
+        android:layout_above="@+id/imageButton"
+
+        android:layout_toEndOf="@+id/imageButton2"
+        android:backgroundTint="#e67e22"
+        android:text="Checkout" />
+
+
+</RelativeLayout>

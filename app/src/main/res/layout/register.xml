@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:backgroundTint="#bdc3c7"
+    tools:context=".RegisterActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="#2ecc71"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="169dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/user"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_register" />
+
+    <TextView
+        android:id="@+id/textViewToolbarRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_register"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:width="@android:dimen/thumbnail_width"
+        android:text="REGISTER"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#ecf0f1"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar_register"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edt_email_register"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="56dp"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="#FFFFFF"
+        android:hint="Email"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewRegister"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:targetApi="o" />
+
+    <EditText
+        android:id="@+id/edt_password_register"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_margin="8dp"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="#FFFFFF"
+        android:hint="Password"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_email_register"
+        tools:targetApi="o" />
+
+    <Button
+        android:id="@+id/btn_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimary"
+        android:text="REGISTER"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_password_register" />
+
+    <TextView
+        android:id="@+id/textUntukLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text=""
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_sign_up"
+        app:layout_constraintVertical_bias="0.024" />
+
+
+</android.support.constraint.ConstraintLayout>
