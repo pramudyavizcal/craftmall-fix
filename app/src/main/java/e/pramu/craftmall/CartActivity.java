@@ -2,6 +2,7 @@ package e.pramu.craftmall;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.widget.Button;
@@ -32,5 +33,8 @@ public class CartActivity extends AppCompatActivity{
         ibProfile = (ImageButton) findViewById(R.id.imageButton3);
         tvTotalHarga = (TextView) findViewById(R.id.textVTotal);
         btnCheckOut = (Button) findViewById(R.id.buttonCheck);
+
+        mAdapter = new AdapterCart(this);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }
