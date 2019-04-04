@@ -11,7 +11,7 @@
 
  public class MainActivity extends AppCompatActivity {
 
-     private final int SPLASH_DISPLAY_LENGHT = 6000;
+     private final int SPLASH_DISPLAY_LENGHT = 8000;
      private ImageView gif;
      @Override
      protected void onCreate(Bundle incicle){
@@ -19,7 +19,7 @@
          setContentView(R.layout.splash);
          gif = findViewById(R.id.cobagif);
          Glide.with(this).asGif()
-                 .load(R.drawable.splashcoba).into(gif);
+                 .load(R.drawable.splashfix).into(gif);
 
          new Handler().postDelayed(new Runnable(){
              @Override

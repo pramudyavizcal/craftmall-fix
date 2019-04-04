@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".homeActivity"
+    >
 
 
     <android.support.v7.widget.Toolbar
@@ -19,7 +21,7 @@
     <fragment
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_below="@id/textView"
+        android:layout_below="@id/toolbar_home"
         android:id="@+id/maps"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         />
@@ -29,7 +31,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar_home"
+        android:layout_below="@id/maps"
         android:text=""
         android:textSize="15dp"
         android:textAlignment="center"
@@ -42,62 +44,156 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_marginTop="10dp"
-        android:layout_below="@id/maps"
-        android:layout_above="@id/imageButton2"
+        android:layout_below="@id/textView"
+        android:layout_above="@id/imageButton"
         >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             >
 
+<!--BARANG 1-->
             <ImageButton
-        android:layout_width="130dp"
-        android:layout_height="150dp"
-        android:src="@drawable/ex"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:id="@+id/barang1"
-        />
+            android:layout_width="130dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ex"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/barang1"
+            />
 
             <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
+                android:id="@+id/namabarang1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="Vas Bunga"
+                android:textStyle="bold"
+                android:layout_marginLeft="30dp"
+                />
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/price"
+                />
 
+            <TextView
+                android:id="@+id/hargabarang1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="-20dp"
+                android:text="Rp.20000,00"
+                android:textStyle="bold" />
+
+<!--BARANG2-->
             <ImageButton
         android:layout_width="130dp"
         android:layout_height="150dp"
         android:src="@drawable/ex"
-        android:layout_marginTop="-150dp"
+        android:layout_marginTop="-190dp"
         android:layout_marginStart="200dp"
         android:layout_marginLeft="200dp"
         android:id="@+id/barang2"
         />
 
+            <TextView
+               android:id="@+id/namabarang2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guci Antik"
+                android:layout_marginLeft="200dp"
+                android:textStyle="bold"
+                />
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginLeft="200dp"
+                android:src="@drawable/price"
+                />
+
+            <TextView
+                android:id="@+id/hargabarang2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="230dp"
+                android:layout_marginTop="-20dp"
+                android:text="Rp.20000,00"
+                android:textStyle="bold" />
+
+            <!--BARANG 3-->
     <ImageButton
         android:layout_width="130dp"
         android:layout_height="150dp"
         android:src="@drawable/ex"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="50dp"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:id="@+id/barang3"
         />
+            <TextView
+                android:id="@+id/namabarang3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Asbak Keren"
+                android:textStyle="bold"
+                android:layout_marginLeft="30dp"
+                />
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/price"
+                />
 
+            <TextView
+                android:id="@+id/hargabarang3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="-20dp"
+                android:text="Rp.20000,00"
+                android:textStyle="bold" />
+
+
+<!--BARANG 4-->
     <ImageButton
         android:layout_width="130dp"
         android:layout_height="150dp"
         android:src="@drawable/ex"
-        android:layout_marginTop="-150dp"
+        android:layout_marginTop="-190dp"
         android:layout_marginStart="200dp"
         android:layout_marginLeft="200dp"
         android:id="@+id/barang4"
         />
+            <TextView
+                android:id="@+id/namabarang4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guci Antik"
+                android:layout_marginLeft="200dp"
+                android:textStyle="bold"
+                />
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginLeft="200dp"
+                android:src="@drawable/price"
+                />
+
+            <TextView
+                android:id="@+id/hargabarang4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="230dp"
+                android:layout_marginTop="-20dp"
+                android:text="Rp.20000,00"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>
@@ -110,7 +206,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:backgroundTint="#2ecc71"
-        android:scaleType="fitCenter"
+        android:scaleType="centerInside"
         android:src="@drawable/home" />
 
     <ImageButton
@@ -122,7 +218,7 @@
         android:layout_marginLeft="128dp"
         android:layout_marginStart="128dp"
         android:backgroundTint="#2ecc71"
-        android:scaleType="fitCenter"
+        android:scaleType="centerInside"
         app:srcCompat="@drawable/cart" />
 
     <ImageButton
@@ -133,9 +229,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:backgroundTint="#2ecc71"
-        android:scaleType="fitCenter"
+        android:scaleType="centerInside"
         app:srcCompat="@drawable/profile" />
-
 
 
 </RelativeLayout>
