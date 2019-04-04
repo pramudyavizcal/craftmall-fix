@@ -13,14 +13,13 @@
         android:title="whistlist"
         android:orderInCategory="1"
         android:icon="@drawable/love1"
-        app:actionViewClass="android.support.v7.widget.SearchView"
         app:showAsAction="always|collapseActionView"
         />
     <item android:id="@+id/notifikasi"
         android:title="notifikasi"
         android:orderInCategory="1"
+        app:actionViewClass="android.support.v7.widget"
         android:icon="@android:drawable/ic_popup_reminder"
-        app:actionViewClass="android.support.v7.widget.SearchView"
         app:showAsAction="always|collapseActionView"
         />
 </menu>

@@ -3,6 +3,7 @@ package e.pramu.craftmall;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
@@ -13,6 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -52,12 +55,15 @@ private TextView Hasil;
     }
     //Code Program pada Method dibawah ini akan Berjalan saat Option Menu Dibuat
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //Memanggil/Memasang menu item pada toolbar dari layout menu_bar.xml
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_search, menu);
         MenuItem searchIem = menu.findItem(R.id.search);
+
         final SearchView searchView = (SearchView) searchIem.getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @SuppressLint("SetTextI18n")
@@ -74,8 +80,27 @@ private TextView Hasil;
                 return false;
             }
         });
+
+        final MenuItem NotifItem = menu.findItem(R.id.notifikasi);
+        NotifItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                startActivity(new Intent(homeActivity.this,NotifikasiActivity.class));
+                return true;
+            }
+        });
+
+        final MenuItem WhistlistItem = menu.findItem(R.id.whistlist);
+        WhistlistItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                startActivity(new Intent(homeActivity.this,WhistlistActivity.class));
+                return true;
+            }
+        });
         return true;
     }
+
 
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
