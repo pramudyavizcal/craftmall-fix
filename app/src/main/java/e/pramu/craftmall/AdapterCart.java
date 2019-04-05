@@ -13,14 +13,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AdapterCart extends RecyclerView.Adapter <AdapterCart.CustomViewHolder>{
-    private ArrayList<CartModel> cartM;
+    private List<CartModel> cartM;
     private LayoutInflater _mInflater;
     private Context _context;
 
-    public AdapterCart (Context context){
+    public AdapterCart (Context context, List<CartModel> cm){
         this._context = context;
+        cartM = cm;
         _mInflater = (LayoutInflater) context.getSystemService((Context.LAYOUT_INFLATER_SERVICE));
 
     }
@@ -35,12 +37,12 @@ public class AdapterCart extends RecyclerView.Adapter <AdapterCart.CustomViewHol
 
     @Override
     public void onBindViewHolder( CustomViewHolder holder, int position) {
-        final String fotoBarang = cartM.get(position).getFotoBarang();
+        final int fotoBarang = cartM.get(position).getFotoBarang();
         final String namaBarang = cartM.get(position).getNamaBarang();
         final String harga = cartM.get(position).getHarga();
         final String kuantitas = cartM.get(position).getKuantitas();
         final String totalHarga = cartM.get(position).getTotalHarga();
-        //holder._imageView.setImageBitmap(fotoBarang);
+        holder._imageView.setImageResource(fotoBarang);
         holder.tvNamaBarang.setText(namaBarang);
         holder.tvHargaBarang.setText(harga);
         holder.tvTotalHarga.setText(totalHarga);
