@@ -1,6 +1,7 @@
 package e.pramu.craftmall;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -26,7 +27,7 @@ import java.util.regex.Pattern;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText edtEmail,edtPassword;
+    private EditText edtUsername,edtEmail,edtPassword;
     private Button btnRegister;
     private FirebaseAuth auth;
     ImageView iv;
@@ -46,40 +47,43 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //menampung imputan user
+                String usernameUser = edtUsername.getText().toString().trim();
                 String emailUser = edtEmail.getText().toString().trim();
                 String passwordUser = edtPassword.getText().toString().trim();
 
                 //validasi email dan password
                 // jika email kosong
-                if (emailUser.isEmpty()){
+                if (emailUser.isEmpty()) {
                     edtEmail.setError("Email tidak boleh kosong");
                 }
+                if (usernameUser.isEmpty()) {
+                    edtUsername.setError("Username harus diisi");
+                }
                 // jika email not valid
-                else if (!Patterns.EMAIL_ADDRESS.matcher(emailUser).matches()){
+                else if (!Patterns.EMAIL_ADDRESS.matcher(emailUser).matches()) {
                     edtEmail.setError("Email tidak valid");
                 }
                 // jika password kosong
-                else if (passwordUser.isEmpty()){
+                else if (passwordUser.isEmpty()) {
                     edtPassword.setError("Password tidak boleh kosong");
                 }
                 //jika password kurang dari 6 karakter
-                else if (passwordUser.length() < 6){
+                else if (passwordUser.length() < 6) {
                     edtPassword.setError("Password minimal terdiri dari 6 karakter");
-                }
-                else {
+                } else {
                     //create user dengan firebase auth
-                    auth.createUserWithEmailAndPassword(emailUser,passwordUser)
+                    auth.createUserWithEmailAndPassword(emailUser, passwordUser)
                             .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     //jika gagal register do something
-                                    if (!task.isSuccessful()){
+                                    if (!task.isSuccessful()) {
                                         Toast.makeText(RegisterActivity.this,
-                                                "Register gagal karena "+ task.getException().getMessage(),
+                                                "Register gagal karena " + task.getException().getMessage(),
                                                 Toast.LENGTH_LONG).show();
-                                    }else {
+                                    } else {
                                         //jika sukses akan menuju ke login activity
-                                        startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
+                                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                                     }
                                 }
                             });
@@ -100,12 +104,12 @@ public class RegisterActivity extends AppCompatActivity {
                         pg.dismiss();
                     }
                 }).start();
-
             }
         });
-    }
+        }
 
     private void initView() {
+        edtUsername = findViewById(R.id.edt_username_register);
         edtEmail = findViewById(R.id.edt_email_register);
         edtPassword = findViewById(R.id.edt_password_register);
         btnRegister = findViewById(R.id.btn_sign_up);
@@ -128,6 +132,8 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     boolean doubleBackToExitPressedOnce = false;
+
+
 
     @Override
     public void onBackPressed() {

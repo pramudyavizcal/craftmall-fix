@@ -35,6 +35,8 @@ public class LoginActivity extends AppCompatActivity {
         login();
     }
 
+
+
     private void login() {
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -86,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                 pg.setMessage("Loading...");
                 pg.setTitle("Harap Tunggu");
                 pg.setProgressStyle(pg.STYLE_SPINNER);
-
+                pg.show();
                 pg.setCancelable(false);
                 new Thread(new Runnable() {
                     public void run() {

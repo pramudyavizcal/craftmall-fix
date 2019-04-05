@@ -29,6 +29,7 @@ public class homeActivity extends AppCompatActivity implements OnMapReadyCallbac
 private FragmentActivity fa;
 private GoogleMap nMap;
 private TextView Hasil;
+ImageButton home,cart,profile,rekombarang;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,19 +40,78 @@ private TextView Hasil;
         fa = new FragmentActivity();
         SupportMapFragment mapFragment = (SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.maps);
         mapFragment.getMapAsync(this);
+        home = (ImageButton) findViewById(R.id.imageButton);
+        cart = (ImageButton) findViewById(R.id.imageButton2);
+        profile = (ImageButton) findViewById(R.id.imageButton3);
+        rekombarang = (ImageButton) findViewById(R.id.barang1);
+        buttonHCP();
+    }
+
+    private void buttonHCP(){
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(homeActivity.this,homeActivity.class));
+            }
+        });
+
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(homeActivity.this,CartActivity.class));
+            }
+        });
+
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(homeActivity.this,ProfileActivity.class));
+            }
+        });
+
+        rekombarang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(homeActivity.this,DetailBarang.class));
+            }
+        });
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         nMap = googleMap;
-        LatLng malang = new LatLng(-7.95,112.61);
-        LatLng toko1 = new LatLng(-7.94,112.61);
-        nMap.addMarker(new MarkerOptions().position(malang).title("Marker in Malang"));
-        nMap.addMarker(new MarkerOptions().position(toko1).title("Toko ke 1"));
-        nMap.moveCamera(CameraUpdateFactory.newLatLng(malang));
+        LatLng toko1 = new LatLng(-7.955187,112.589633);
+        LatLng toko2 = new LatLng(-7.961253,112.613599);
+        LatLng toko3 = new LatLng(-7.955014,112.621000);
+        LatLng toko4 = new LatLng(-7.926718,112.602201);
+        LatLng toko5 = new LatLng(-7.984516,112.627129);
+        LatLng toko6 = new LatLng(-7.938956,112.634282);
+        LatLng toko7 = new LatLng(-7.980795,112.657443);
+        LatLng toko8= new LatLng(-7.9612392,112.6008655);
+        LatLng toko9 = new LatLng(-7.908566,112.619576);
+        LatLng toko10 = new LatLng(-7.949505,112.644082);
+        nMap.addMarker(new MarkerOptions().position(toko1).title("Giri Palma Mebel"));
+        nMap.addMarker(new MarkerOptions().position(toko2).title("Mebel 54 Malang"));
+        nMap.addMarker(new MarkerOptions().position(toko3).title("Informa Furnishing"));
+        nMap.addMarker(new MarkerOptions().position(toko4).title("Toko Berkat Jaya"));
+        nMap.addMarker(new MarkerOptions().position(toko5).title("Meubel Jakarta"));
+        nMap.addMarker(new MarkerOptions().position(toko6).title("Toko Dunia Mebel"));
+        nMap.addMarker(new MarkerOptions().position(toko7).title("Mebel Arjuna"));
+        nMap.addMarker(new MarkerOptions().position(toko8).title("Mebel Mas Agung"));
+        nMap.addMarker(new MarkerOptions().position(toko9).title("Olympic Furniture"));
+        nMap.addMarker(new MarkerOptions().position(toko10).title("Simpel Meja Belajar Anak"));
         nMap.moveCamera(CameraUpdateFactory.newLatLng(toko1));
+        nMap.moveCamera(CameraUpdateFactory.newLatLng(toko2));
+        nMap.moveCamera(CameraUpdateFactory.newLatLng(toko3));
+        nMap.moveCamera(CameraUpdateFactory.newLatLng(toko4));
+        nMap.moveCamera(CameraUpdateFactory.newLatLng(toko5));
+        nMap.moveCamera(CameraUpdateFactory.newLatLng(toko6));
+        nMap.moveCamera(CameraUpdateFactory.newLatLng(toko7));
+        nMap.moveCamera(CameraUpdateFactory.newLatLng(toko8));
+        nMap.moveCamera(CameraUpdateFactory.newLatLng(toko9));
+        nMap.moveCamera(CameraUpdateFactory.newLatLng(toko10));
         nMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-        nMap.animateCamera(CameraUpdateFactory.newLatLngZoom(malang, 15.0f),5000,null);
+        nMap.animateCamera(CameraUpdateFactory.newLatLngZoom(toko1, 13.0f),5000,null);
     }
     //Code Program pada Method dibawah ini akan Berjalan saat Option Menu Dibuat
 
