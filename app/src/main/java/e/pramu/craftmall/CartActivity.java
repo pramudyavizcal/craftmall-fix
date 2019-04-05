@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class CartActivity extends AppCompatActivity{
     private RecyclerView mRecyclerView;
@@ -17,11 +20,17 @@ public class CartActivity extends AppCompatActivity{
     private ImageButton ibHome, ibCart, ibProfile;
     private TextView tvTotalHarga;
     private Button btnCheckOut;
+    List<CartModel> lC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cart);
+        lC = new ArrayList<>();
+        lC.add(new CartModel(R.drawable.whistlist, "Barang satu", "200000","1"));
+        lC.add(new CartModel(R.drawable.whistlist, "Barang dua", "100000","1"));
+        lC.add(new CartModel(R.drawable.whistlist, "Barang tiga", "150000","1"));
+        lC.add(new CartModel(R.drawable.whistlist, "Barang empat", "50000","1"));
         initView();
     }
 
@@ -34,7 +43,8 @@ public class CartActivity extends AppCompatActivity{
         tvTotalHarga = (TextView) findViewById(R.id.textVTotal);
         btnCheckOut = (Button) findViewById(R.id.buttonCheck);
 
-        mAdapter = new AdapterCart(this);
+        mAdapter = new AdapterCart(this,lC);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setAdapter(mAdapter);
     }
 }
