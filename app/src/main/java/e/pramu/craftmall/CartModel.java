@@ -2,7 +2,7 @@ package e.pramu.craftmall;
 
 public class CartModel {
     private  String id;
-    private String fotoBarang;
+    private int fotoBarang;
     private String namaBarang;
     private String harga;
     private String kuantitas;
@@ -11,8 +11,14 @@ public class CartModel {
     public CartModel(){
 
     }
+    public CartModel(int foto, String nama, String hrg, String kuan){
+        fotoBarang = foto;
+        namaBarang = nama;
+        harga = hrg;
+        kuantitas = kuan;
+    }
 
-    public CartModel(String foto, String nama, String hrg, String kuant, String tothg){
+    public CartModel(int foto, String nama, String hrg, String kuant, String tothg){
         fotoBarang = foto;
         namaBarang = nama;
         harga = hrg;
@@ -20,7 +26,7 @@ public class CartModel {
         totalHarga = tothg;
     }
 
-    public CartModel(String _id, String foto, String nama, String hrg, String kuant, String tothg){
+    public CartModel(String _id, int foto, String nama, String hrg, String kuant, String tothg){
         id = _id;
         fotoBarang = foto;
         namaBarang = nama;
@@ -37,11 +43,11 @@ public class CartModel {
         this.id = id;
     }
 
-    public String getFotoBarang() {
+    public int getFotoBarang() {
         return fotoBarang;
     }
 
-    public void setFotoBarang(String fotoBarang) {
+    public void setFotoBarang(int fotoBarang) {
         this.fotoBarang = fotoBarang;
     }
 
@@ -70,6 +76,7 @@ public class CartModel {
     }
 
     public String getTotalHarga() {
+        totalHarga = String.valueOf(Integer.valueOf(harga) * Integer.valueOf(kuantitas));
         return totalHarga;
     }
 
