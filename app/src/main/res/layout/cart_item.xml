@@ -15,8 +15,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -25,7 +24,7 @@
 
                 <LinearLayout
                     android:id="@+id/content"
-                    android:layout_width="33dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:orientation="vertical">
@@ -35,10 +34,10 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="15dp"
-                        android:src="@mipmap/bg"
-                        android:layout_marginLeft="28dp" />
+                        android:src="@mipmap/bg" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -60,13 +59,14 @@
                         android:text="Nama barang"
                         android:textColor="@android:color/black"
                         android:textSize="20sp" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <LinearLayout
-                            android:layout_width="100dp"
+                            android:layout_width="104dp"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
@@ -89,8 +89,8 @@
 
                                 <ImageButton
                                     android:id="@+id/minQnt"
-                                    android:layout_width="38dp"
-                                    android:layout_height="34dp"
+                                    android:layout_width="40dp"
+                                    android:layout_height="42dp"
                                     android:backgroundTint="#ffffff"
                                     android:scaleType="fitXY"
                                     android:src="@drawable/kurang" />
@@ -105,8 +105,8 @@
 
                                 <ImageButton
                                     android:id="@+id/plusQnt"
-                                    android:layout_width="40dp"
-                                    android:layout_height="35dp"
+                                    android:layout_width="42dp"
+                                    android:layout_height="42dp"
                                     android:backgroundTint="#ffffff"
                                     android:scaleType="fitXY"
                                     android:src="@drawable/tambah" />
@@ -120,6 +120,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <TextView
                                 android:id="@+id/textHarga"
                                 android:layout_width="190dp"
@@ -135,19 +136,19 @@
 
                             <TextView
                                 android:id="@+id/hargaRp"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Rp. "
-                                android:textColor="@android:color/black"
-                                android:layout_marginStart="0dp"
                                 android:layout_marginLeft="0dp"
-                                />
+                                android:layout_marginStart="0dp"
+                                android:text="Rp. "
+                                android:textColor="@android:color/black" />
                         </LinearLayout>
 
                     </LinearLayout>
 
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/ctrlbtn"
                     android:layout_width="0dp"
@@ -159,22 +160,20 @@
                         android:id="@+id/checkBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="15dp"
-                        />
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp" />
 
                     <ImageButton
                         android:id="@+id/btnHapus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="#ffffff"
-                        android:layout_marginStart="0dp"
-                        android:scaleType="fitCenter"
-                        app:srcCompat="@drawable/hapus"
                         android:layout_marginLeft="0dp"
+                        android:layout_marginStart="0dp"
                         android:layout_marginTop="30dp"
-                        />
+                        android:backgroundTint="#ffffff"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/hapus" />
 
                 </LinearLayout>
 
@@ -195,7 +194,7 @@
                     android:layout_marginLeft="40dp"
                     android:layout_marginStart="40dp"
                     android:layout_marginTop="0dp"
-                    android:text="Total"
+                    android:text="Rp. "
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
