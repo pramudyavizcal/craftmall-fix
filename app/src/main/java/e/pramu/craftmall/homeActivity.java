@@ -9,6 +9,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -18,18 +20,26 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.bumptech.glide.load.resource.bitmap.BitmapDrawableResource;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class homeActivity extends AppCompatActivity implements OnMapReadyCallback{
 private FragmentActivity fa;
+private RecyclerView recyclerView;
 private GoogleMap nMap;
 private TextView Hasil;
-ImageButton home,cart,profile,rekombarang;
+    List<modelBarang> listWhist;
+    adapterBarang AW;
+ImageButton cart,profile,rekombarang,home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,17 +53,33 @@ ImageButton home,cart,profile,rekombarang;
         home = (ImageButton) findViewById(R.id.imageButton);
         cart = (ImageButton) findViewById(R.id.imageButton2);
         profile = (ImageButton) findViewById(R.id.imageButton3);
-        rekombarang = (ImageButton) findViewById(R.id.barang1);
+        recyclerView = (RecyclerView) findViewById(R.id.rvHome);
+        listWhist = new ArrayList<>();
+        listWhist.add(new modelBarang(R.drawable.vas,"Vas Bunga","25000",
+                "Vas Bunga Dekorasi Meja Artificial Flower\n"+
+                "Rp 25.000/pcs\n"+
+                "**sudah termasuk vas + bunga\n\n"+
+        "Detail vas\n"+
+        "Tinggi: 10,5cm\n"+
+        "Tinggi sampai bunga: 34cm\n"+
+        "Diameter atas: 11cm\n+"+
+        "Diameter bawah: 6,5cm\n"+
+        "Bahan: Plastik\n\n"+
+        "Detail bunga:\n"+
+        "Bahan: kain dan plastik\n"+
+        "Warna: Merah, putih, kuning, peach\n\n"+
+        "Berat volume: 850gr" ));
+        listWhist.add(new modelBarang(R.drawable.meja,"Meja Tamu","1555000","Bagus\nKokoh\nCocok untuk rumah yang minimalis"));
+        listWhist.add(new modelBarang(R.drawable.kursi,"Kursi Kayu Jati","2000000","Kuat\nDari Jati asli\nTidak mudah lapuk"));
+        listWhist.add(new modelBarang(R.drawable.guci,"Guci Antik","44000","Telah berumur ratusan tahun\n" +
+                "Stock terbatas"));
+        AW = new adapterBarang(this,listWhist);
+        recyclerView.setLayoutManager(new GridLayoutManager(homeActivity.this, 2));
+        recyclerView.setAdapter(AW);
         buttonHCP();
     }
 
     private void buttonHCP(){
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(homeActivity.this,homeActivity.class));
-            }
-        });
 
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,12 +95,6 @@ ImageButton home,cart,profile,rekombarang;
             }
         });
 
-        rekombarang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(homeActivity.this,DetailBarang.class));
-            }
-        });
     }
 
     @Override
@@ -92,7 +112,7 @@ ImageButton home,cart,profile,rekombarang;
         LatLng toko10 = new LatLng(-7.949505,112.644082);
         nMap.addMarker(new MarkerOptions().position(toko1).title("Giri Palma Mebel"));
         nMap.addMarker(new MarkerOptions().position(toko2).title("Mebel 54 Malang"));
-        nMap.addMarker(new MarkerOptions().position(toko3).title("Informa Furnishing"));
+        nMap.addMarker(new MarkerOptions().position(toko3).title("Informa Furnishing").icon(BitmapDescriptorFactory.fromResource(R.drawable.location)));
         nMap.addMarker(new MarkerOptions().position(toko4).title("Toko Berkat Jaya"));
         nMap.addMarker(new MarkerOptions().position(toko5).title("Meubel Jakarta"));
         nMap.addMarker(new MarkerOptions().position(toko6).title("Toko Dunia Mebel"));
@@ -111,7 +131,7 @@ ImageButton home,cart,profile,rekombarang;
         nMap.moveCamera(CameraUpdateFactory.newLatLng(toko9));
         nMap.moveCamera(CameraUpdateFactory.newLatLng(toko10));
         nMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-        nMap.animateCamera(CameraUpdateFactory.newLatLngZoom(toko1, 13.0f),5000,null);
+        nMap.animateCamera(CameraUpdateFactory.newLatLngZoom(toko3, 13.0f),5000,null);
     }
     //Code Program pada Method dibawah ini akan Berjalan saat Option Menu Dibuat
 
@@ -169,6 +189,7 @@ ImageButton home,cart,profile,rekombarang;
                 //jika pilih yess
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                        moveTaskToBack(true);
                         finish();
                     }
                 })

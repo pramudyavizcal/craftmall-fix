@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:backgroundTint="#bdc3c7">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_notifikasi"
@@ -34,15 +36,13 @@
         app:layout_constraintTop_toTopOf="@+id/toolbar_login"
         tools:textStyle="bold" />
 
-    <ListView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvNot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listnotifikasi"
         android:layout_below="@id/toolbar_notifikasi"
-        >
-
-
-    </ListView>
+        android:layout_above="@id/imageButton"
+        android:layout_marginBottom="5dp"/>
 
 
     <ImageButton

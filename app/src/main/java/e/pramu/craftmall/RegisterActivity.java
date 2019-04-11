@@ -84,6 +84,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     } else {
                                         //jika sukses akan menuju ke login activity
                                         startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                                        finish();
                                     }
                                 }
                             });
@@ -115,6 +116,10 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegister = findViewById(R.id.btn_sign_up);
         iv = findViewById(R.id.imageViewRegister);
         auth = FirebaseAuth.getInstance();
+        if (auth.getCurrentUser()!=null){
+            startActivity(new Intent(RegisterActivity.this, homeActivity.class));
+            finish();
+        }
     }
 
     private void toLogin(){
@@ -131,25 +136,26 @@ public class RegisterActivity extends AppCompatActivity {
                         }).into(textView);
     }
 
-    boolean doubleBackToExitPressedOnce = false;
 
 
 
     @Override
     public void onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
-            super.onBackPressed();
-            return;
-        }
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Klik tombol kembali sekali lagi untuk EXIT", Toast.LENGTH_SHORT).show();
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce=false;
-
-            }
-        }, 20000);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Are You Sure Want to Exit?")
+                .setCancelable(true)//tidak bisa tekan tombol back
+                //jika pilih yess
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        moveTaskToBack(true);
+                        finish();
+                    }
+                })
+                //jika pilih no
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                }).show();
     }
     }

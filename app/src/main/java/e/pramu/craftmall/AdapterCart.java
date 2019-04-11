@@ -42,6 +42,7 @@ public class AdapterCart extends RecyclerView.Adapter <AdapterCart.CustomViewHol
         final String harga = cartM.get(position).getHarga();
         final String kuantitas = cartM.get(position).getKuantitas();
         final String totalHarga = cartM.get(position).getTotalHarga();
+
         holder._imageView.setImageResource(fotoBarang);
         holder.tvNamaBarang.setText(namaBarang);
         holder.tvHargaBarang.setText(harga);
@@ -75,6 +76,7 @@ public class AdapterCart extends RecyclerView.Adapter <AdapterCart.CustomViewHol
             cekHitung = (CheckBox) itemView.findViewById(R.id.checkBox);
             kuantitas = (EditText) itemView.findViewById(R.id.kuantitasBrg);
             cv = (CardView) itemView.findViewById(R.id.cv);
+
         }
 
     }

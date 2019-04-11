@@ -13,16 +13,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.ValueEventListener;
-
 import java.util.List;
 
-public class AdapterWhistlist extends RecyclerView.Adapter<AdapterWhistlist.MyViewHolder> {
+public class adapterBarang extends RecyclerView.Adapter<adapterBarang.MyViewHolder> {
 
     private Context context;
     private List<modelBarang> HW;
 
-    public AdapterWhistlist(Context ctx, List<modelBarang> hw) {
+    public adapterBarang(Context ctx,List<modelBarang> hw) {
 
         context = ctx;
         HW = hw;
@@ -33,22 +31,23 @@ public class AdapterWhistlist extends RecyclerView.Adapter<AdapterWhistlist.MyVi
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v;
         LayoutInflater mInflater = LayoutInflater.from(context);
-        v = mInflater.inflate(R.layout.grid_whistlist,parent,false);
+        v = mInflater.inflate(R.layout.grid_barang,parent,false);
         return new MyViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-        modelBarang mb = HW.get(position);
-
-        holder.tv.setText(mb.getNama());
-        holder.iv.setImageResource(mb.getLogo());
+        holder.tv.setText(HW.get(position).getNama());
+        holder.hg.setText(HW.get(position).getHarga());
+        holder.iv.setImageResource(HW.get(position).getLogo());
         holder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context,DetailBarang.class);
-                intent.putExtra("Name",HW.get(position).getNama());
+                intent.putExtra("Nama",HW.get(position).getNama());
+                intent.putExtra("Harga",HW.get(position).getHarga());
                 intent.putExtra("Logo",HW.get(position).getLogo());
+                intent.putExtra("Desk",HW.get(position).getDeskripsi());
                 context.startActivity(intent);
             }
         });
@@ -60,15 +59,17 @@ public class AdapterWhistlist extends RecyclerView.Adapter<AdapterWhistlist.MyVi
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-TextView tv;
-ImageView iv;
-CardView cv;
+        TextView tv,hg;
+        ImageView iv;
+        CardView cv;
         public MyViewHolder(View itemView) {
             super(itemView);
-            tv = (TextView) itemView.findViewById(R.id.tvCompany);
+            tv = (TextView) itemView.findViewById(R.id.tvNama);
             iv = (ImageView) itemView.findViewById(R.id.ivLogo);
             cv = (CardView) itemView.findViewById(R.id.cardview_id);
+            hg = (TextView) itemView.findViewById(R.id.tvHarga);
 
         }
     }
 }
+

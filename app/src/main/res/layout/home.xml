@@ -37,166 +37,180 @@
         android:textAlignment="center"
         />
 
-    <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/textView"
+    <!--<ScrollView-->
+        <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+        <!--xmlns:tools="http://schemas.android.com/tools"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_below="@id/textView"-->
+        <!--android:layout_above="@id/imageButton"-->
+        <!--&gt;-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical"-->
+            <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+            <!--xmlns:tools="http://schemas.android.com/tools"-->
+            <!--&gt;-->
+
+<!--&lt;!&ndash;BARANG 1&ndash;&gt;-->
+            <!--<ImageButton-->
+            <!--android:layout_width="130dp"-->
+            <!--android:layout_height="150dp"-->
+            <!--android:layout_marginTop="15dp"-->
+            <!--android:src="@drawable/vas"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:layout_marginStart="30dp"-->
+            <!--android:layout_marginLeft="30dp"-->
+            <!--android:id="@+id/barang1"-->
+            <!--/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/namabarang1"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Vas Bunga"-->
+                <!--android:textStyle="bold"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--/>-->
+            <!--<ImageView-->
+                <!--android:layout_width="22dp"-->
+                <!--android:layout_height="22dp"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:src="@drawable/price"-->
+                <!--/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/hargabarang1"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="60dp"-->
+                <!--android:layout_marginTop="-20dp"-->
+                <!--android:text="Rp.25.000,00"-->
+                <!--android:textStyle="bold" />-->
+
+<!--&lt;!&ndash;BARANG2&ndash;&gt;-->
+            <!--<ImageButton-->
+        <!--android:layout_width="130dp"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:src="@drawable/guci"-->
+        <!--android:scaleType="fitCenter"-->
+        <!--android:layout_marginTop="-190dp"-->
+        <!--android:layout_marginStart="200dp"-->
+        <!--android:layout_marginLeft="200dp"-->
+        <!--android:id="@+id/barang2"-->
+        <!--/>-->
+
+            <!--<TextView-->
+               <!--android:id="@+id/namabarang2"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Guci Antik"-->
+                <!--android:layout_marginLeft="200dp"-->
+                <!--android:textStyle="bold"-->
+                <!--/>-->
+            <!--<ImageView-->
+                <!--android:layout_width="22dp"-->
+                <!--android:layout_height="22dp"-->
+                <!--android:layout_marginLeft="200dp"-->
+                <!--android:src="@drawable/price"-->
+                <!--/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/hargabarang2"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="230dp"-->
+                <!--android:layout_marginTop="-20dp"-->
+                <!--android:text="Rp.44.000,00"-->
+                <!--android:textStyle="bold" />-->
+
+            <!--&lt;!&ndash;BARANG 3&ndash;&gt;-->
+    <!--<ImageButton-->
+        <!--android:layout_width="130dp"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:src="@drawable/kursi"-->
+        <!--android:scaleType="fitXY"-->
+        <!--android:layout_marginTop="50dp"-->
+        <!--android:layout_marginStart="30dp"-->
+        <!--android:layout_marginLeft="30dp"-->
+        <!--android:id="@+id/barang3"-->
+        <!--/>-->
+            <!--<TextView-->
+                <!--android:id="@+id/namabarang3"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Kursi Kayu Jati 4 pcs"-->
+                <!--android:textStyle="bold"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--/>-->
+            <!--<ImageView-->
+                <!--android:layout_width="22dp"-->
+                <!--android:layout_height="22dp"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:src="@drawable/price"-->
+                <!--/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/hargabarang3"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="60dp"-->
+                <!--android:layout_marginTop="-20dp"-->
+                <!--android:text="Rp.2.000.000,00"-->
+                <!--android:textStyle="bold" />-->
+
+
+<!--&lt;!&ndash;BARANG 4&ndash;&gt;-->
+    <!--<ImageButton-->
+        <!--android:layout_width="130dp"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:src="@drawable/meja"-->
+        <!--android:scaleType="fitXY"-->
+        <!--android:layout_marginTop="-190dp"-->
+        <!--android:layout_marginStart="200dp"-->
+        <!--android:layout_marginLeft="200dp"-->
+        <!--android:id="@+id/barang4"-->
+        <!--/>-->
+            <!--<TextView-->
+                <!--android:id="@+id/namabarang4"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Meja Tamu"-->
+                <!--android:layout_marginLeft="200dp"-->
+                <!--android:textStyle="bold"-->
+                <!--/>-->
+            <!--<ImageView-->
+                <!--android:layout_width="22dp"-->
+                <!--android:layout_height="22dp"-->
+                <!--android:layout_marginLeft="200dp"-->
+                <!--android:src="@drawable/price"-->
+                <!--/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/hargabarang4"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="230dp"-->
+                <!--android:layout_marginTop="-20dp"-->
+                <!--android:text="Rp.1.550.000,00"-->
+                <!--android:textStyle="bold" />-->
+
+        <!--</LinearLayout>-->
+    <!--</ScrollView>-->
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_above="@id/imageButton"
+        android:layout_below="@id/maps"
+        android:id="@+id/rvHome"
         >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            >
 
-<!--BARANG 1-->
-            <ImageButton
-            android:layout_width="130dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/ex"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
-            android:id="@+id/barang1"
-            />
-
-            <TextView
-                android:id="@+id/namabarang1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vas Bunga"
-                android:textStyle="bold"
-                android:layout_marginLeft="30dp"
-                />
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_marginLeft="30dp"
-                android:src="@drawable/price"
-                />
-
-            <TextView
-                android:id="@+id/hargabarang1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="-20dp"
-                android:text="Rp.20000,00"
-                android:textStyle="bold" />
-
-<!--BARANG2-->
-            <ImageButton
-        android:layout_width="130dp"
-        android:layout_height="150dp"
-        android:src="@drawable/ex"
-        android:layout_marginTop="-190dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginLeft="200dp"
-        android:id="@+id/barang2"
-        />
-
-            <TextView
-               android:id="@+id/namabarang2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Guci Antik"
-                android:layout_marginLeft="200dp"
-                android:textStyle="bold"
-                />
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_marginLeft="200dp"
-                android:src="@drawable/price"
-                />
-
-            <TextView
-                android:id="@+id/hargabarang2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="230dp"
-                android:layout_marginTop="-20dp"
-                android:text="Rp.20000,00"
-                android:textStyle="bold" />
-
-            <!--BARANG 3-->
-    <ImageButton
-        android:layout_width="130dp"
-        android:layout_height="150dp"
-        android:src="@drawable/ex"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:id="@+id/barang3"
-        />
-            <TextView
-                android:id="@+id/namabarang3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Asbak Keren"
-                android:textStyle="bold"
-                android:layout_marginLeft="30dp"
-                />
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_marginLeft="30dp"
-                android:src="@drawable/price"
-                />
-
-            <TextView
-                android:id="@+id/hargabarang3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="-20dp"
-                android:text="Rp.20000,00"
-                android:textStyle="bold" />
-
-
-<!--BARANG 4-->
-    <ImageButton
-        android:layout_width="130dp"
-        android:layout_height="150dp"
-        android:src="@drawable/ex"
-        android:layout_marginTop="-190dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginLeft="200dp"
-        android:id="@+id/barang4"
-        />
-            <TextView
-                android:id="@+id/namabarang4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Guci Antik"
-                android:layout_marginLeft="200dp"
-                android:textStyle="bold"
-                />
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_marginLeft="200dp"
-                android:src="@drawable/price"
-                />
-
-            <TextView
-                android:id="@+id/hargabarang4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="230dp"
-                android:layout_marginTop="-20dp"
-                android:text="Rp.20000,00"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-    </ScrollView>
+    </android.support.v7.widget.RecyclerView>
 
     <ImageButton
         android:id="@+id/imageButton"

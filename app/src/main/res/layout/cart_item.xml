@@ -37,7 +37,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="15dp"
-                        android:src="@mipmap/bg" />
+                        android:src="@drawable/vas" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -162,7 +162,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="15dp" />
+                        android:layout_marginTop="15dp"
+                        android:checked="true"
+                        />
 
                     <ImageButton
                         android:id="@+id/btnHapus"
@@ -194,7 +196,7 @@
                     android:layout_marginLeft="40dp"
                     android:layout_marginStart="40dp"
                     android:layout_marginTop="0dp"
-                    android:text="Rp. "
+                    android:text="Rp. 25000"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 

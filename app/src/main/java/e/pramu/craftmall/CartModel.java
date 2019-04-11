@@ -77,6 +77,7 @@ public class CartModel {
 
     public String getTotalHarga() {
         totalHarga = String.valueOf(Integer.valueOf(harga) * Integer.valueOf(kuantitas));
+
         return totalHarga;
     }
 

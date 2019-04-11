@@ -1,29 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="#bdc3c7"
     android:background="@color/colorPrimary"
-    android:backgroundTint="#bdc3c7">
+    tools:context=".DetailBarang">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_home"
+        android:id="@+id/toolbar_detail"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:background="@color/colorPrimary"
         android:backgroundTint="#2ecc71"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/AppTheme.AppBarOverlay" />
+        android:theme="@style/AppTheme.AppBarOverlay"/>
+
+    <TextView
+        android:id="@+id/textViewToolbarDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_register"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="14dp"
+        android:width="@android:dimen/thumbnail_width"
+        android:text="DETAIL"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#ecf0f1"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar_profile"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:textStyle="bold" />
 
     <android.support.v7.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="345dp"
+        android:id="@+id/cardViewDet"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar_home"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-8dp">
+        android:layout_below="@+id/toolbar_detail"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,48 +50,64 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="156dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:src="@mipmap/bg" />
+                android:layout_height="140dp"
+                android:src="@drawable/vas"
+                android:id="@+id/gambarbarangdetail"
+                />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="290dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_weight="1">
 
                     <TextView
+                        android:id="@+id/namabarangdetail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:text="Nama Barang"
+                        android:text="Vas Bunga"
                         android:textColor="#000000"
                         android:textSize="18dp" />
 
                     <TextView
+                        android:id="@+id/hargadetail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         android:layout_marginLeft="10dp"
-                        android:text="Rp. x.xxx.xxx" />
+                        android:text="Rp.25.000,00" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="55dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_weight="5">
 
                     <ImageButton
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="5dp"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/love1" />
+                        android:src="@drawable/redlove"
+                        android:id="@+id/redlove"
+
+                        />
+
+                    <ImageButton
+                        android:id="@+id/whitelove"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="-53dp"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/whitelove" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -82,11 +116,15 @@
     </android.support.v7.widget.CardView>
 
     <ScrollView
-        android:layout_width="345dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/cardView"
-        android:layout_above="@id/buttonCart"
-        android:layout_centerHorizontal="true">
+        android:layout_below="@+id/cardViewDet"
+        android:layout_above="@id/cartBtn"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/scdet"
+        >
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
@@ -98,6 +136,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/deskripsidetail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -112,8 +151,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:text="ini deskripsi"
-                    android:textAlignment="inherit" />
+                    android:text=""/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -122,9 +160,10 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="186dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
 
                         <ImageView
                             android:id="@+id/iLok"
@@ -134,38 +173,55 @@
                             android:background="@color/colorPrimary"
                             android:backgroundTint="#ffffff"
                             android:scaleType="fitCenter"
-                            app:srcCompat="@drawable/lokasi" />
+                            android:src="@drawable/lokasi" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:id="@+id/alamatdetail"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
-                            android:text="Alamat" />
+                            android:text="Jl. Mayjend. Panjaitan No.92-94, Penanggungan, Klojen, Kota Malang, Jawa Timur 65113" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:layout_marginRight="10dp">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/whatsappicon"
                             />
 
                         <TextView
-                            android:layout_width="158dp"
+                            android:id="@+id/iAlamat"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="xxxxxxxxxx" />
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="10dp"
+                            android:text="0821-3131-4442" />
                     </LinearLayout>
 
                 </LinearLayout>
             </LinearLayout>
-
         </android.support.v7.widget.CardView>
     </ScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_above="@id/imageButton"
+        android:layout_centerHorizontal="true"
+        android:text="Cart"
+        android:textColor="#ffffff"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="#d35400"
+        android:id="@+id/cartBtn"
+        />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -174,9 +230,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginStart="4dp"
         android:backgroundTint="#2ecc71"
         android:scaleType="centerInside"
         android:src="@drawable/home" />
@@ -187,12 +240,11 @@
         android:layout_height="65dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="4dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginStart="128dp"
         android:backgroundTint="#2ecc71"
         android:scaleType="centerInside"
-        android:src="@drawable/cart" />
+        app:srcCompat="@drawable/cart" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -201,40 +253,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginStart="2dp"
         android:backgroundTint="#2ecc71"
         android:scaleType="centerInside"
-        android:src="@drawable/profile" />
-
-    <Button
-        android:id="@+id/buttonCart"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/imageButton"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="#d35400"
-        android:text="Cart"<TextView
-    android:id="@+id/textViewToolbarWhistlist"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentEnd="true"
-    android:layout_alignParentTop="true"
-    android:layout_marginTop="14dp"
-    android:width="@android:dimen/thumbnail_width"
-    android:text="wishlist"
-    android:textAlignment="center"
-    android:textAllCaps="true"
-    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-    android:textColor="#ecf0f1"
-    android:layout_alignParentRight="true"
-    android:textStyle="bold"/>
-        android:textColor="#ffffff" />
-
-
-
+        app:srcCompat="@drawable/profile" />
 
 </RelativeLayout>
