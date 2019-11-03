@@ -22,7 +22,6 @@
         android:id="@+id/textViewToolbarWhistlist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar_login"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:width="@android:dimen/thumbnail_width"
@@ -31,10 +30,6 @@
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#ecf0f1"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar_login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar_login"
         tools:textStyle="bold" />
 
     <android.support.v7.widget.RecyclerView

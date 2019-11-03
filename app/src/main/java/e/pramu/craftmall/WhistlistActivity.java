@@ -23,11 +23,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WhistlistActivity  extends AppCompatActivity {
+public class WhistlistActivity extends AppCompatActivity {
     RecyclerView rvMain;
     List<modelBarang> listWhist;
     AdapterWhistlist AW;
-    ImageButton cart,profile,home;
+    ImageButton cart, profile, home;
     private Activity context;
     private DatabaseReference dbwish;
 
@@ -38,12 +38,12 @@ public class WhistlistActivity  extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 listWhist.clear();
-                for (DataSnapshot wishsnap : dataSnapshot.getChildren()){
-                   modelBarang modelwish = wishsnap.getValue(modelBarang.class);
+                for (DataSnapshot wishsnap : dataSnapshot.getChildren()) {
+                    modelBarang modelwish = wishsnap.getValue(modelBarang.class);
 //                   modelBarang mod = new modelBarang(modelwish.getLogo(),modelwish.getNama());
-                   listWhist.add(modelwish);
+                    listWhist.add(modelwish);
                 }
-                AW = new AdapterWhistlist(WhistlistActivity.this,listWhist);
+                AW = new AdapterWhistlist(WhistlistActivity.this, listWhist);
                 rvMain.setAdapter(AW);
             }
 
@@ -73,28 +73,29 @@ public class WhistlistActivity  extends AppCompatActivity {
         rvMain.setLayoutManager(new GridLayoutManager(WhistlistActivity.this, 2));
         rvMain.setAdapter(AW);
         buttonHCP();
+
     }
 
-    private void buttonHCP(){
+    private void buttonHCP() {
 
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(WhistlistActivity.this,CartActivity.class));
+                startActivity(new Intent(WhistlistActivity.this, CartActivity.class));
             }
         });
 
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(WhistlistActivity.this,ProfileActivity.class));
+                startActivity(new Intent(WhistlistActivity.this, ProfileActivity.class));
             }
         });
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(WhistlistActivity.this,homeActivity.class));
+                startActivity(new Intent(WhistlistActivity.this, homeActivity.class));
             }
         });
     }
