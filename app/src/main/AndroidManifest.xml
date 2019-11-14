@@ -39,6 +39,7 @@
         <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".NotifikasiActivity"></activity>
+        <activity android:name=".kirimpesanan"/>
         <activity android:name=".WhistlistActivity"></activity>
         <activity android:name=".DetailBarang"></activity>
 

@@ -55,20 +55,15 @@ ImageButton cart,profile,rekombarang,home;
         profile = (ImageButton) findViewById(R.id.imageButton3);
         recyclerView = (RecyclerView) findViewById(R.id.rvHome);
         listWhist = new ArrayList<>();
-        listWhist.add(new modelBarang(R.drawable.vas,"Vas Bunga","25000",
-                "Vas Bunga Dekorasi Meja Artificial Flower\n"+
-                "Rp 25.000/pcs\n"+
-                "**sudah termasuk vas + bunga\n\n"+
-        "Detail vas\n"+
-        "Tinggi: 10,5cm\n"+
-        "Tinggi sampai bunga: 34cm\n"+
-        "Diameter atas: 11cm\n+"+
-        "Diameter bawah: 6,5cm\n"+
-        "Bahan: Plastik\n\n"+
-        "Detail bunga:\n"+
-        "Bahan: kain dan plastik\n"+
-        "Warna: Merah, putih, kuning, peach\n\n"+
-        "Berat volume: 850gr" ));
+        listWhist.add(new modelBarang(R.drawable.hellokitty,"Hiasan Hello Kitty","Rp5000",
+                "Hiasan Meja, Lemari berbentuk hello kitty cocok untuk meja belajar anak atau hiasan dalam lemari kaca\n"+
+                "Rp 5.000/pcs\n"+
+                "\n"+
+        "Detail Barang\n"+
+        "Tinggi: 10 - 15cm\n"+
+        "Bahan: Tanah liat\n\n"+
+        "Warna: Merah, kuning, \n\n"+
+        "Berat : 150gr" ));
         listWhist.add(new modelBarang(R.drawable.meja,"Meja Tamu","1555000","Bagus\nKokoh\nCocok untuk rumah yang minimalis"));
         listWhist.add(new modelBarang(R.drawable.kursi,"Kursi Kayu Jati","2000000","Kuat\nDari Jati asli\nTidak mudah lapuk"));
         listWhist.add(new modelBarang(R.drawable.guci,"Guci Antik","44000","Telah berumur ratusan tahun\n" +
@@ -137,49 +132,49 @@ ImageButton cart,profile,rekombarang,home;
 
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        //Memanggil/Memasang menu item pada toolbar dari layout menu_bar.xml
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_search, menu);
-        MenuItem searchIem = menu.findItem(R.id.search);
-
-        final SearchView searchView = (SearchView) searchIem.getActionView();
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                Hasil.setText("Hasil Pencarian: "+query);
-
-                searchView.clearFocus();
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                return false;
-            }
-        });
-
-        final MenuItem NotifItem = menu.findItem(R.id.notifikasi);
-        NotifItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                startActivity(new Intent(homeActivity.this,NotifikasiActivity.class));
-                return true;
-            }
-        });
-
-        final MenuItem WhistlistItem = menu.findItem(R.id.whistlist);
-        WhistlistItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                startActivity(new Intent(homeActivity.this,WhistlistActivity.class));
-                return true;
-            }
-        });
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        //Memanggil/Memasang menu item pada toolbar dari layout menu_bar.xml
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.menu_search, menu);
+//        MenuItem searchIem = menu.findItem(R.id.search);
+//
+//        final SearchView searchView = (SearchView) searchIem.getActionView();
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @SuppressLint("SetTextI18n")
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                Hasil.setText("Hasil Pencarian: "+query);
+//
+//                searchView.clearFocus();
+//                return true;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String s) {
+//                return false;
+//            }
+//        });
+//
+//        final MenuItem NotifItem = menu.findItem(R.id.notifikasi);
+//        NotifItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//                startActivity(new Intent(homeActivity.this,NotifikasiActivity.class));
+//                return true;
+//            }
+//        });
+//
+//        final MenuItem WhistlistItem = menu.findItem(R.id.whistlist);
+//        WhistlistItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//                startActivity(new Intent(homeActivity.this,WhistlistActivity.class));
+//                return true;
+//            }
+//        });
+//        return true;
+//    }
 
 
     public void onBackPressed() {

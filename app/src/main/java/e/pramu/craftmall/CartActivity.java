@@ -39,11 +39,10 @@ public class CartActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cart);
         lC = new ArrayList<>();
-        lC.add(new CartModel(R.drawable.vas, "Vas Bunga", "25000","1"));
+
 
         initView();
         buttonHCP();
-
     }
 
     private void initView(){

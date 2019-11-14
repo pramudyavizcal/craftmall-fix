@@ -25,13 +25,10 @@
              @Override
              public void run() {
                  Intent mainIntent = null;
-                 mainIntent = new Intent(MainActivity.this,RegisterActivity.class);
-
+                 mainIntent = new Intent(MainActivity.this,homeActivity.class);
                  MainActivity.this.startActivity(mainIntent);
                  MainActivity.this.finish();
              }
          },SPLASH_DISPLAY_LENGHT);
-
      }
-
  }

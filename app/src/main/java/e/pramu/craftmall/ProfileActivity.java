@@ -50,7 +50,6 @@ public class ProfileActivity extends AppCompatActivity {
         edtprofil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                edtprofil.setText(null);
                 DialogForm();
             }
         });
@@ -69,8 +68,8 @@ public class ProfileActivity extends AppCompatActivity {
     // untuk mengosongi edittext
     private void kosong() {
         txt_nama.setText(tvnama.getText());
-        txt_alamat.setText(null);
-        txt_nohp.setText(null);
+        txt_alamat.setText(tvalamat.getText());
+        txt_nohp.setText(tvnohp.getText());
         txt_email.setText(tvemail.getText());
     }
 

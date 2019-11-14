@@ -1,11 +1,15 @@
 package e.pramu.craftmall;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,6 +22,9 @@ public class DetailBarang extends AppCompatActivity {
     private TextView name,desk,hargadetail,deskdetail,alamatdetail,iAlamat;
     private ImageView img,loc;
     private Button btnCart;
+    AlertDialog.Builder dialog;
+    View dialogView;
+    LayoutInflater inflater;
     ProgressDialog pg;
     DatabaseReference dbwish;
     private ImageButton btnWish,btnwhite,btnred,home,cart,profile;
@@ -80,28 +87,13 @@ public class DetailBarang extends AppCompatActivity {
         btnCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DetailBarang.this,CartActivity.class));
-                pg = new ProgressDialog(DetailBarang.this);
-                pg.setMessage("Loading...");
-                pg.setTitle("Harap Tunggu");
-                pg.setProgressStyle(pg.STYLE_SPINNER);
-                pg.show();
-                pg.setCancelable(false);
-                new Thread(new Runnable() {
-                    public void run() {
-                        try {
-                            Thread.sleep(3000);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        pg.dismiss();
-                    }
-                }).start();
+                startActivity(new Intent(DetailBarang.this,kirimpesanan.class));
             }
         });
         buttonHCP();
 
     }
+
     private void buttonHCP() {
 
         cart.setOnClickListener(new View.OnClickListener() {

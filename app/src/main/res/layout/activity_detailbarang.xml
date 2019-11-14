@@ -180,7 +180,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
-                            android:text="Jl. Mayjend. Panjaitan No.92-94, Penanggungan, Klojen, Kota Malang, Jawa Timur 65113" />
+                            android:text="Danish Souvenir"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -202,7 +202,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="10dp"
-                            android:text="0821-3131-4442" />
+                            android:text="0812-3029-0765" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -216,7 +216,7 @@
         android:layout_marginLeft="80dp"
         android:layout_above="@id/imageButton"
         android:layout_centerHorizontal="true"
-        android:text="Cart"
+        android:text="Pesan"
         android:textColor="#ffffff"
         android:background="@color/colorPrimary"
         android:backgroundTint="#d35400"
