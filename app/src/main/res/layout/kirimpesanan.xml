@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_Pesanan"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#2ecc71"
+        android:theme="@style/AppTheme.AppBarOverlay"/>
+    <TextView
+        android:id="@+id/textViewToolbarPesanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="14dp"
+        android:width="@android:dimen/thumbnail_width"
+        android:text="Pesanan anda"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#ecf0f1"
+        android:layout_alignParentRight="true"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/txt_namaPemesan"
+        android:hint="Nama Anda"
+        android:layout_below="@id/toolbar_Pesanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background_normal"/>
+
+    <EditText
+        android:id="@+id/txt_namaPesanan"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/txt_namaPemesan"
+        android:hint="Barang Pesanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background_normal"/>
+
+    <EditText
+        android:id="@+id/txt_ketPenjual"
+        android:layout_marginBottom="10dp"
+        android:hint="Keterangan untuk penjual"
+        android:layout_below="@+id/txt_namaPesanan"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:background="@android:drawable/editbox_background_normal"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_ketPenjual"
+        android:id="@+id/btnPesan"
+        android:text="Kirim"
+        android:textColor="#ffffff"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="#d35400"
+        />
+
+
+</RelativeLayout>
